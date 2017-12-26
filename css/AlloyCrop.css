@@ -1,0 +1,57 @@
+.AlloyCrop-croppingBox{
+    position: relative;
+    margin:0 auto;
+    overflow: hidden;
+    background: #000;
+}
+.AlloyCrop-popBox{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
+.AlloyCrop-cover{
+    position:absolute;
+    top: 0;
+    left: 0;
+    z-index:100;
+}
+.AlloyCrop-ok{
+    position:absolute;
+    z-index: 101;
+    width: 100px;
+    line-height: 40px;
+    height: 40px;
+    bottom: 20px;
+    right: 50px;
+    border-radius: 2px;
+    color: #ffffff;
+    background: #2bcafd;
+    display: block;
+    text-align: center;
+}
+.AlloyCrop-cancel{
+    position:absolute;
+    z-index: 101;
+    width: 100px;
+    line-height: 40px;
+    height: 40px;
+    bottom: 20px;
+    left: 50px;
+    border-radius: 2px;
+    color: #ffffff;
+    background: #2bcafd;
+    display: block;
+    text-align: center;
+}
+.AlloyCrop-loading{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    z-index: 99999999;
+    background: url(../img/loading.gif) no-repeat center center rgba(255,255,255,.9);
+}

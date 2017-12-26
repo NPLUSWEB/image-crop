@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <title>demo1-在指定区域内操作裁切</title>
+    <style>
+        html,body {
+            margin: 0;
+            padding: 0;
+        }
+        #crop_btn {
+            color: white;
+            background-color: #836FFF;
+            height: 40px;
+            display: inline-block;
+            line-height: 40px;
+            width: 150px;
+            text-align: center;
+            border-radius: 2px;
+            margin: 30px auto;
+            display: block;
+        }
+        #inputFile{
+            display: none;
+        }
+        .result{
+            padding: 0 20px;
+            border-top: 1px solid #eee;
+        }
+        #box{
+            position: relative;
+            padding-bottom:80px;
+            margin: 0 20px;
+            border: 1px solid #eee;
+            padding-top: 20px;
+        }
+        h3{
+            text-align: center;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="css/AlloyCrop.css">
+</head>
+<body>
+    <h3>demo1-在指定区域内操作裁切</h2>
+    <div id="box"></div>
+    <label id="crop_btn">
+        选择文件
+        <input type="file" name="" id="inputFile">
+    </label>
+    <div class="result">
+        <p>裁切结果</p>
+        <div id="crop_result"></div>
+    </div>
+    
+    <script src="js/exif.js"></script>
+    <script src="js/transform.js"></script>
+    <script src="js/alloy-finger.js"></script>
+    <script src="js/alloy-crop.js"></script>
+    <script>
+        var box = document.querySelector("#box");
+        var crop_result = document.querySelector("#crop_result");
+        new AlloyCrop({
+            input: '#inputFile',
+            croppingBox: '#box',
+            width: 300,
+            height: 300,
+            output: 1,
+            ok: function (base64, canvas) {
+                var img = document.createElement("img");
+                img.src = base64;
+                crop_result.appendChild(img);
+            },
+            cancel: function () {
+                box.innerHTML = '';
+                crop_result.innerHTML = '';
+            }
+        });
+    </script>
+</body>
+</html>
