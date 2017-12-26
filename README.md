@@ -8,7 +8,7 @@ image-crop是一款移动端图片裁切组件;
 
 ## API
 ```
-<link rel="stylesheet" type="text/css" href="css/AlloyCrop.css">
+<link rel="stylesheet" href="css/AlloyCrop.css">
 <script src="js/exif.js"></script>
 <script src="js/transform.js"></script>
 <script src="js/alloy-finger.js"></script>
